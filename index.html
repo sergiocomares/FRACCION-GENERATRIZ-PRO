@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Actividad guiada para obtener fracciones generatrices">
+  <title>Fracción Generatriz – PRO vs PRO MAX</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+      options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'] }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="site-header">
+      <img class="site-logo" src="assets/logo-jodralmates.png" alt="Logotipo de Sergio Jodral">
+      <h1>FRACCIÓN GENERATRIZ <span>– PRO vs PRO MAX</span></h1>
+    </header>
+
+    <section id="welcome-screen" class="screen welcome-card" aria-labelledby="welcome-title">
+      <h2 id="welcome-title">Reto de fracciones generatrices</h2>
+      <p>Resuelve seis decimales y descubre la fracción generatriz de cada uno.</p>
+      <label for="student-name">Tu nombre</label>
+      <input id="student-name" class="text-input" type="text" autocomplete="name" maxlength="60" placeholder="Escribe tu nombre">
+      <p id="name-error" class="field-error" hidden>Escribe tu nombre para comenzar.</p>
+      <button id="start-button" class="primary-button">COMENZAR ACTIVIDAD</button>
+    </section>
+
+    <section id="exercise-screen" class="screen" hidden aria-live="polite">
+      <div class="progress-row">
+        <p id="exercise-counter" class="eyebrow"></p>
+        <p id="score-preview"></p>
+      </div>
+      <div class="progress-bar" aria-hidden="true"><span id="progress-value"></span></div>
+
+      <article class="exercise-card">
+        <p class="eyebrow">Número decimal</p>
+        <div id="decimal-display" class="decimal-display"></div>
+        <p id="decimal-kind" class="decimal-kind" hidden></p>
+
+        <section id="type-question" class="type-question" aria-labelledby="type-question-title">
+          <h2 id="type-question-title">Antes de empezar, identifica el tipo de decimal</h2>
+          <div class="type-options">
+            <button type="button" data-decimal-type="Decimal exacto">DECIMAL EXACTO</button>
+            <button type="button" data-decimal-type="Periódico puro">PERIÓDICO PURO</button>
+            <button type="button" data-decimal-type="Periódico mixto">PERIÓDICO MIXTO</button>
+          </div>
+          <p id="type-feedback" class="field-error" role="status"></p>
+        </section>
+
+        <section id="pro-method-content" hidden>
+          <section class="method-intro" aria-labelledby="method-title">
+            <h2 id="method-title">Método PRO</h2>
+          </section>
+          <div id="procedure" class="procedure"></div>
+          <div id="pro-equation-row" class="pro-equation-row">
+            <section id="pro-workspace" class="pro-workspace" aria-labelledby="pro-workspace-title"></section>
+            <span class="equation-equals" aria-label="es igual a">=</span>
+            <section id="answer-section" class="answer-section" aria-labelledby="answer-title">
+              <h2 id="answer-title">Resultado final</h2>
+              <div class="fraction-inputs">
+                <label>Numerador
+                  <input id="numerator" class="math-input" data-input-kind="integer" type="text" inputmode="numeric" autocomplete="off" maxlength="8" aria-describedby="answer-error">
+                </label>
+                <span class="fraction-line" aria-hidden="true"></span>
+                <label>Denominador
+                  <input id="denominator" class="math-input" data-input-kind="integer" type="text" inputmode="numeric" autocomplete="off" maxlength="8" aria-describedby="answer-error">
+                </label>
+              </div>
+              <p id="answer-error" class="field-error" role="alert" hidden></p>
+            </section>
+          </div>
+          <button id="pro-max-button" class="secondary-button" hidden>VER MÉTODO ALGEBRAICO PRO MAX</button>
+          <div id="pro-max-procedure" class="procedure pro-max-procedure" hidden></div>
+        </section>
+
+        <section id="keypad-panel" class="keypad-panel" aria-label="Teclado matemático" hidden>
+          <p id="active-field-label">Selecciona un campo para escribir</p>
+          <div id="math-keypad" class="math-keypad">
+            <button type="button" data-key="1">1</button><button type="button" data-key="2">2</button><button type="button" data-key="3">3</button>
+            <button type="button" data-key="4">4</button><button type="button" data-key="5">5</button><button type="button" data-key="6">6</button>
+            <button type="button" data-key="7">7</button><button type="button" data-key="8">8</button><button type="button" data-key="9">9</button>
+            <button type="button" data-key=",">,</button><button type="button" data-key="0">0</button><button type="button" data-key="-">−</button>
+            <button type="button" class="key-action" data-action="backspace" aria-label="Borrar último carácter">⌫ Borrar</button>
+            <button type="button" class="key-action" data-action="clear">Limpiar</button>
+          </div>
+        </section>
+
+        <button id="check-button" class="primary-button" hidden>COMPROBAR RESPUESTA</button>
+        <p id="feedback" class="feedback" role="status"></p>
+        <button id="next-button" class="secondary-button" hidden>SIGUIENTE EJERCICIO</button>
+      </article>
+      <aside id="subtraction-calculator" class="subtraction-calculator" aria-label="Calculadora de restas" hidden>
+        <p>CALCULADORA DE RESTAS</p>
+        <output id="calculator-display" class="calculator-display" aria-live="polite">0</output>
+        <div id="calculator-keys" class="calculator-keys">
+          <button type="button" data-calculator-key="1">1</button><button type="button" data-calculator-key="2">2</button><button type="button" data-calculator-key="3">3</button>
+          <button type="button" data-calculator-key="4">4</button><button type="button" data-calculator-key="5">5</button><button type="button" data-calculator-key="6">6</button>
+          <button type="button" data-calculator-key="7">7</button><button type="button" data-calculator-key="8">8</button><button type="button" data-calculator-key="9">9</button>
+          <button type="button" data-calculator-action="clear">C</button><button type="button" data-calculator-key="0">0</button><button type="button" data-calculator-action="backspace">⌫</button>
+          <button type="button" class="calculator-operation" data-calculator-key="minus">−</button><button type="button" class="calculator-operation" data-calculator-key="equals">=</button>
+        </div>
+      </aside>
+    </section>
+
+    <section id="report-screen" class="screen" hidden>
+      <div id="capture-message" class="capture-message" hidden>
+        <strong>¡Reto completado! Haz una captura de pantalla de este informe y entrégala en la tarea correspondiente de Google Classroom.</strong>
+        <span>En Windows puedes utilizar Windows + Shift + S para realizar la captura.</span>
+      </div>
+      <article id="final-report" class="final-report">
+        <header class="report-header">
+          <img class="report-logo" src="assets/logo-jodralmates.png" alt="Logotipo de Sergio Jodral">
+          <h2>MI INFORME DE FRACCIÓN GENERATRIZ</h2>
+          <p>FRACCIÓN GENERATRIZ – PRO vs PRO MAX</p>
+          <p>Autor: Sergio Jodral – Profesor de Matemáticas</p>
+        </header>
+        <section class="report-overview">
+          <div><span>Alumno/a</span><strong id="report-name"></strong></div>
+          <div><span>Finalización</span><strong id="report-date"></strong></div>
+          <div class="score-box"><span>Puntuación</span><strong id="report-score"></strong></div>
+          <div><span>Aciertos</span><strong id="report-percentage"></strong></div>
+          <div><span>Completados</span><strong id="report-completed"></strong></div>
+        </section>
+        <section class="report-table-wrap">
+          <table>
+            <thead><tr><th>Ejercicio</th><th>Decimal</th><th>Tipo</th><th>Método</th><th>Fracción</th><th>Resultado</th></tr></thead>
+            <tbody id="report-rows"></tbody>
+          </table>
+        </section>
+        <section class="mastery-section">
+          <h3>Dominio por tipo de decimal</h3>
+          <div id="mastery-cards" class="mastery-cards"></div>
+        </section>
+        <p id="final-badge" class="final-badge"></p>
+      </article>
+      <div id="report-actions" class="report-actions">
+        <button id="prepare-capture" class="primary-button">📸 PREPARAR CAPTURA PARA CLASSROOM</button>
+        <button id="restart-button" class="secondary-button">NUEVA PARTIDA</button>
+      </div>
+      <button id="back-to-report" class="secondary-button back-button" hidden>VOLVER AL INFORME COMPLETO</button>
+    </section>
+    <footer class="activity-footer">Actividad creada por Sergio Jodral, profesor de Matemáticas, con apoyo de tecnología de IA.</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
