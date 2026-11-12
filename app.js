@@ -7,10 +7,16 @@ const exercisePool = [
   { latex: '1{,}2\\overline{34}', plain: '1,2 periódico 34', type: 'Periódico mixto', numerator: 611, denominator: 495, allDigits: '1234', beforePeriod: '12', periodDigits: 2, nonRepeatingDigits: 1, maxSteps: ['N=1{,}2\\overline{34}', '1000N=1234{,}\\overline{34}', '10N=12{,}\\overline{34}', '1000N-10N=1234{,}\\overline{34}-12{,}\\overline{34}', '990N=1222', 'N=\\frac{1222}{990}=\\frac{611}{495}'] },
   { latex: '4{,}06', plain: '4,06', type: 'Decimal exacto', numerator: 203, denominator: 50, allDigits: '406', decimalDigits: 2, maxSteps: ['N=4{,}06', '100N=406', 'N=\\frac{406}{100}=\\frac{203}{50}'] },
   { latex: '12{,}04', plain: '12,04', type: 'Decimal exacto', numerator: 301, denominator: 25, allDigits: '1204', decimalDigits: 2, maxSteps: ['N=12{,}04', '100N=1204', 'N=\\frac{1204}{100}=\\frac{301}{25}'] },
+  { latex: '6{,}75', plain: '6,75', type: 'Decimal exacto', numerator: 27, denominator: 4, allDigits: '675', decimalDigits: 2, maxSteps: ['N=6{,}75', '100N=675', 'N=\\frac{675}{100}=\\frac{27}{4}'] },
+  { latex: '0{,}48', plain: '0,48', type: 'Decimal exacto', numerator: 12, denominator: 25, allDigits: '48', decimalDigits: 2, maxSteps: ['N=0{,}48', '100N=48', 'N=\\frac{48}{100}=\\frac{12}{25}'] },
   { latex: '1{,}\\overline{6}', plain: '1,6 periódico', type: 'Periódico puro', numerator: 5, denominator: 3, allDigits: '16', beforePeriod: '1', periodDigits: 1, maxSteps: ['N=1{,}\\overline{6}', '10N=16{,}\\overline{6}', '10N-N=16{,}\\overline{6}-1{,}\\overline{6}', '9N=15', 'N=\\frac{15}{9}=\\frac{5}{3}'] },
   { latex: '0{,}\\overline{45}', plain: '0,45 periódico', type: 'Periódico puro', numerator: 5, denominator: 11, allDigits: '45', beforePeriod: '0', periodDigits: 2, maxSteps: ['N=0{,}\\overline{45}', '100N=45{,}\\overline{45}', '100N-N=45{,}\\overline{45}-0{,}\\overline{45}', '99N=45', 'N=\\frac{45}{99}=\\frac{5}{11}'] },
+  { latex: '5{,}\\overline{18}', plain: '5,18 periódico', type: 'Periódico puro', numerator: 57, denominator: 11, allDigits: '518', beforePeriod: '5', periodDigits: 2, maxSteps: ['N=5{,}\\overline{18}', '100N=518{,}\\overline{18}', '100N-N=518{,}\\overline{18}-5{,}\\overline{18}', '99N=513', 'N=\\frac{513}{99}=\\frac{57}{11}'] },
+  { latex: '7{,}\\overline{24}', plain: '7,24 periódico', type: 'Periódico puro', numerator: 239, denominator: 33, allDigits: '724', beforePeriod: '7', periodDigits: 2, maxSteps: ['N=7{,}\\overline{24}', '100N=724{,}\\overline{24}', '100N-N=724{,}\\overline{24}-7{,}\\overline{24}', '99N=717', 'N=\\frac{717}{99}=\\frac{239}{33}'] },
   { latex: '0{,}1\\overline{6}', plain: '0,1 periódico 6', type: 'Periódico mixto', numerator: 1, denominator: 6, allDigits: '16', beforePeriod: '1', periodDigits: 1, nonRepeatingDigits: 1, maxSteps: ['N=0{,}1\\overline{6}', '100N=16{,}\\overline{6}', '10N=1{,}\\overline{6}', '100N-10N=16{,}\\overline{6}-1{,}\\overline{6}', '90N=15', 'N=\\frac{15}{90}=\\frac{1}{6}'] },
-  { latex: '4{,}2\\overline{5}', plain: '4,2 periódico 5', type: 'Periódico mixto', numerator: 383, denominator: 90, allDigits: '425', beforePeriod: '42', periodDigits: 1, nonRepeatingDigits: 1, maxSteps: ['N=4{,}2\\overline{5}', '100N=425{,}\\overline{5}', '10N=42{,}\\overline{5}', '100N-10N=425{,}\\overline{5}-42{,}\\overline{5}', '90N=383', 'N=\\frac{383}{90}'] }
+  { latex: '4{,}2\\overline{5}', plain: '4,2 periódico 5', type: 'Periódico mixto', numerator: 383, denominator: 90, allDigits: '425', beforePeriod: '42', periodDigits: 1, nonRepeatingDigits: 1, maxSteps: ['N=4{,}2\\overline{5}', '100N=425{,}\\overline{5}', '10N=42{,}\\overline{5}', '100N-10N=425{,}\\overline{5}-42{,}\\overline{5}', '90N=383', 'N=\\frac{383}{90}'] },
+  { latex: '2{,}34\\overline{5}', plain: '2,34 periódico 5', type: 'Periódico mixto', numerator: 2111, denominator: 900, allDigits: '2345', beforePeriod: '234', periodDigits: 1, nonRepeatingDigits: 2, maxSteps: ['N=2{,}34\\overline{5}', '1000N=2345{,}\\overline{5}', '100N=234{,}\\overline{5}', '1000N-100N=2345{,}\\overline{5}-234{,}\\overline{5}', '900N=2111', 'N=\\frac{2111}{900}'] },
+  { latex: '3{,}4\\overline{27}', plain: '3,4 periódico 27', type: 'Periódico mixto', numerator: 377, denominator: 110, allDigits: '3427', beforePeriod: '34', periodDigits: 2, nonRepeatingDigits: 1, maxSteps: ['N=3{,}4\\overline{27}', '1000N=3427{,}\\overline{27}', '10N=34{,}\\overline{27}', '1000N-10N=3427{,}\\overline{27}-34{,}\\overline{27}', '990N=3393', 'N=\\frac{3393}{990}=\\frac{377}{110}'] }
 ];
 
 function shuffle(items) {
@@ -30,13 +36,16 @@ function selectExercises() {
 
     const oneDigitPeriod = candidates.filter((exercise) => exercise.periodDigits === 1);
     const twoDigitPeriod = candidates.filter((exercise) => exercise.periodDigits === 2);
-    return [shuffle(oneDigitPeriod)[0], shuffle(twoDigitPeriod)[0]];
+    const requiredExamples = [shuffle(oneDigitPeriod)[0], shuffle(twoDigitPeriod)[0]];
+    const additionalExample = shuffle(candidates.filter((exercise) => !requiredExamples.includes(exercise)))[0];
+    return [...requiredExamples, additionalExample];
   });
   return shuffle(selected);
 }
 
 let exercises = selectExercises();
-const state = { name: '', index: 0, results: [], activeInput: null, capturePrepared: false };
+const MAX_ERRORS_PER_EXERCISE = 3;
+const state = { name: '', index: 0, results: [], errors: 0, activeInput: null, capturePrepared: false };
 const $ = (id) => document.getElementById(id);
 const welcome = $('welcome-screen');
 const exerciseScreen = $('exercise-screen');
@@ -109,12 +118,12 @@ function manipulateActiveInput(action) {
 
 function proTheoryFor(exercise) {
   if (exercise.type === 'Decimal exacto') {
-    return `<h3>Teoría general</h3><p>En un decimal exacto, escribe todas las cifras sin coma en el numerador. En el denominador, escribe un 1 seguido de tantos ceros como cifras haya después de la coma. Simplifica al final si es necesario.</p>`;
+    return `<h3>Teoría general</h3><p>En un decimal exacto, escribe todas las cifras sin coma en el numerador. En el denominador, escribe un 1 seguido de tantos ceros como cifras haya después de la coma.</p>`;
   }
   if (exercise.type === 'Periódico puro') {
-    return `<h3>Teoría general</h3><p>En un periódico puro, forma un número con todas las cifras sin coma y réstale la parte que queda antes del período. En el denominador, escribe tantos nueves como cifras tenga el período. Realiza la resta y simplifica si es necesario.</p>`;
+    return `<h3>Teoría general</h3><p>En un periódico puro, forma un número con todas las cifras sin coma y réstale la parte que queda antes del período. En el denominador, escribe tantos nueves como cifras tenga el período. Realiza la resta.</p>`;
   }
-  return `<h3>Teoría general</h3><p>En un periódico mixto, forma un número con todas las cifras sin coma y réstale la parte anterior al período. En el denominador, escribe tantos nueves como cifras tenga el período y añade tantos ceros como cifras no periódicas haya. Realiza la resta y simplifica si es necesario.</p>`;
+  return `<h3>Teoría general</h3><p>En un periódico mixto, forma un número con todas las cifras sin coma y réstale la parte anterior al período. En el denominador, escribe tantos nueves como cifras tenga el período y añade tantos ceros como cifras no periódicas haya. Realiza la resta.</p>`;
 }
 
 function proWorkspaceFor(exercise) {
@@ -134,8 +143,22 @@ function proMaxProcedureFor(exercise) {
   return `<h3>PRO MAX: método algebraico</h3><p>Se plantea una ecuación con el número, se eliminan los decimales y se despeja la fracción.</p>${exercise.maxSteps.map((step) => `<p>\\[${step}\\]</p>`).join('')}`;
 }
 
+function setProMaxButtonLabel(showingProcedure) {
+  const button = $('pro-max-button');
+  if (showingProcedure) {
+    button.textContent = 'OCULTAR MÉTODO ALGEBRAICO';
+    return;
+  }
+  button.textContent = 'VER MÉTODO ALGEBRAICO PRO MAX ';
+  const badge = document.createElement('span');
+  badge.className = 'recommended-badge';
+  badge.textContent = 'RECOMENDADO';
+  button.append(badge);
+}
+
 async function renderExercise() {
   const exercise = exercises[state.index];
+  state.errors = 0;
   $('exercise-counter').textContent = `Ejercicio ${state.index + 1} de ${exercises.length}`;
   $('score-preview').textContent = `${state.results.filter((item) => item.correct).length} aciertos`;
   $('progress-value').style.width = `${(state.index / exercises.length) * 100}%`;
@@ -150,7 +173,7 @@ async function renderExercise() {
   $('pro-max-procedure').hidden = true;
   $('pro-max-procedure').innerHTML = proMaxProcedureFor(exercise);
   $('pro-max-button').hidden = true;
-  $('pro-max-button').textContent = 'VER MÉTODO ALGEBRAICO PRO MAX';
+  setProMaxButtonLabel(false);
   $('pro-equation-row').classList.toggle('exact', exercise.type === 'Decimal exacto');
   numerator.value = ''; denominator.value = '';
   const isExact = exercise.type === 'Decimal exacto';
@@ -160,6 +183,7 @@ async function renderExercise() {
   renderCalculator();
   $('answer-error').hidden = true; $('feedback').textContent = ''; $('feedback').className = 'feedback';
   $('next-button').hidden = true; $('check-button').hidden = true;
+  $('attempts-remaining').textContent = `Errores disponibles: ${MAX_ERRORS_PER_EXERCISE} de ${MAX_ERRORS_PER_EXERCISE}`;
   wireMathInputs($('pro-workspace'));
   setActiveInput($('pro-all-digits'));
   await queueMathJax(exerciseScreen);
@@ -168,6 +192,7 @@ async function renderExercise() {
 async function selectDecimalType(type) {
   const exercise = exercises[state.index];
   if (type !== exercise.type) {
+    if (registerError()) return;
     $('type-feedback').textContent = 'Revisa la parte decimal y vuelve a intentarlo.';
     return;
   }
@@ -218,6 +243,54 @@ function hasCorrectProTerms(exercise) {
     && (exercise.type === 'Decimal exacto' || $('pro-before-period').value === exercise.beforePeriod);
 }
 
+function updateRemainingErrors() {
+  const remaining = MAX_ERRORS_PER_EXERCISE - state.errors;
+  $('attempts-remaining').textContent = `Errores disponibles: ${remaining} de ${MAX_ERRORS_PER_EXERCISE}`;
+}
+
+function finishExercise({ correct, enteredNumerator, enteredDenominator, message, method = 'PRO' }) {
+  const exercise = exercises[state.index];
+  state.results.push({
+    ...exercise,
+    enteredNumerator,
+    enteredDenominator,
+    method,
+    viewedProMax: false,
+    errors: state.errors,
+    correct
+  });
+  numerator.disabled = true;
+  denominator.disabled = true;
+  $('pro-workspace').querySelectorAll('input').forEach((input) => { input.disabled = true; });
+  $('check-button').hidden = true;
+  $('keypad-panel').hidden = true;
+  $('subtraction-calculator').hidden = true;
+  const feedback = $('feedback');
+  feedback.className = `feedback ${correct ? 'success' : 'failure'}`;
+  feedback.textContent = message;
+  $('pro-max-button').hidden = !correct;
+  $('next-button').textContent = state.index === exercises.length - 1 ? 'VER MI INFORME FINAL' : 'SIGUIENTE EJERCICIO';
+  $('next-button').hidden = false;
+}
+
+function registerError() {
+  state.errors += 1;
+  updateRemainingErrors();
+  if (state.errors < MAX_ERRORS_PER_EXERCISE) return false;
+
+  const exercise = exercises[state.index];
+  $('type-question').hidden = true;
+  $('answer-error').hidden = true;
+  finishExercise({
+    correct: false,
+    enteredNumerator: null,
+    enteredDenominator: null,
+    method: 'No completado',
+    message: `Has agotado las tres oportunidades. La fracción generatriz es ${exercise.numerator}/${exercise.denominator}.`
+  });
+  return true;
+}
+
 function submitAnswer() {
   const exercise = exercises[state.index];
   const top = Number.parseInt(numerator.value, 10);
@@ -229,38 +302,56 @@ function submitAnswer() {
     return;
   }
   if (!hasCorrectProTerms(exercise)) {
+    if (registerError()) return;
     error.textContent = 'Completa correctamente los tres términos de la fracción inicial antes de comprobar el resultado.';
     error.hidden = false;
     return;
   }
   const enteredGcd = gcd(top, bottom);
   const correct = top / enteredGcd === exercise.numerator && bottom / enteredGcd === exercise.denominator;
-  state.results.push({ ...exercise, enteredNumerator: top, enteredDenominator: bottom, method: 'PRO', viewedProMax: false, correct });
-  numerator.disabled = true; denominator.disabled = true; $('check-button').hidden = true;
-  const feedback = $('feedback');
-  feedback.className = `feedback ${correct ? 'success' : 'failure'}`;
-  feedback.textContent = correct ? '¡Correcto! La fracción es equivalente a la solución.' : `Aún no. La fracción generatriz simplificada es ${exercise.numerator}/${exercise.denominator}.`;
-  $('pro-max-button').hidden = !correct;
-  $('next-button').textContent = state.index === exercises.length - 1 ? 'VER MI INFORME FINAL' : 'SIGUIENTE EJERCICIO';
-  $('next-button').hidden = false;
+  if (!correct) {
+    if (registerError()) return;
+    $('feedback').className = 'feedback failure';
+    $('feedback').textContent = 'Aún no. Revisa la fracción y vuelve a intentarlo.';
+    return;
+  }
+  finishExercise({
+    correct: true,
+    enteredNumerator: top,
+    enteredDenominator: bottom,
+    message: '¡Correcto! La fracción es equivalente a la solución.'
+  });
 }
 
 function addResultRow(result, position) {
   const row = document.createElement('tr');
   const method = result.viewedProMax ? 'PRO + PRO MAX' : result.method;
-  row.innerHTML = `<td>${position + 1}</td><td>\\(${result.latex}\\)</td><td>${result.type}</td><td>${method}</td><td>\\(\\frac{${result.enteredNumerator}}{${result.enteredDenominator}}\\)</td><td class="${result.correct ? 'correct' : 'incorrect'}">${result.correct ? 'Correcta' : 'Incorrecta'}</td>`;
+  const enteredFraction = result.enteredNumerator === null ? '—' : `\\(\\frac{${result.enteredNumerator}}{${result.enteredDenominator}}\\)`;
+  row.innerHTML = `<td>${position + 1}</td><td>\\(${result.latex}\\)</td><td>${result.type}</td><td>${method}</td><td>${enteredFraction}</td><td>${result.errors}</td><td class="${result.correct ? 'correct' : 'incorrect'}">${result.correct ? 'Correcta' : 'Incorrecta'}</td>`;
   return row;
 }
 
 async function showReport() {
   exerciseScreen.hidden = true; reportScreen.hidden = false;
   const correctCount = state.results.filter((result) => result.correct).length;
-  const score = Math.round((correctCount / exercises.length) * 100);
+  const percentage = Math.round((correctCount / exercises.length) * 100);
+  const totalErrors = state.results.reduce((total, result) => total + result.errors, 0);
+  const pointsPerExercise = 10 / exercises.length;
+  const penaltyPerError = pointsPerExercise / MAX_ERRORS_PER_EXERCISE;
+  const penalty = state.results
+    .filter((result) => result.correct)
+    .reduce((total, result) => total + result.errors * penaltyPerError, 0);
+  const score = state.results.reduce((total, result) => {
+    if (!result.correct) return total;
+    return total + Math.max(0, pointsPerExercise - result.errors * penaltyPerError);
+  }, 0);
   $('report-name').textContent = state.name;
   $('report-date').textContent = new Intl.DateTimeFormat('es-ES', { dateStyle: 'long', timeStyle: 'short' }).format(new Date());
-  $('report-score').textContent = `${score}/100`;
-  $('report-percentage').textContent = `${score}%`;
+  $('report-score').textContent = `${score.toLocaleString('es-ES', { maximumFractionDigits: 2 })}/10`;
+  $('report-percentage').textContent = `${percentage}%`;
   $('report-completed').textContent = `${state.results.length} de ${exercises.length}`;
+  $('report-errors').textContent = `${totalErrors}`;
+  $('report-penalty').textContent = `−${penalty.toLocaleString('es-ES', { maximumFractionDigits: 2 })}`;
   const rows = $('report-rows'); rows.replaceChildren(...state.results.map(addResultRow));
   const mastery = $('mastery-cards'); mastery.replaceChildren();
   ['Decimal exacto', 'Periódico puro', 'Periódico mixto'].forEach((type) => {
@@ -270,7 +361,7 @@ async function showReport() {
     card.innerHTML = `<strong>${type}s</strong><span>${count}/${typeResults.length} correctos</span>`;
     mastery.append(card);
   });
-  $('final-badge').textContent = score >= 80 ? 'Insignia final: PRO MAX' : 'Insignia final: PRO';
+  $('final-badge').textContent = percentage >= 80 ? 'Insignia final: PRO MAX' : 'Insignia final: PRO';
   await queueMathJax(reportScreen);
 }
 
@@ -309,10 +400,10 @@ $('pro-max-button').addEventListener('click', async () => {
   procedure.hidden = !procedure.hidden;
   if (!procedure.hidden) {
     state.results[state.results.length - 1].viewedProMax = true;
-    $('pro-max-button').textContent = 'OCULTAR MÉTODO ALGEBRAICO';
+    setProMaxButtonLabel(true);
     await queueMathJax(procedure);
   } else {
-    $('pro-max-button').textContent = 'VER MÉTODO ALGEBRAICO PRO MAX';
+    setProMaxButtonLabel(false);
   }
 });
 $('type-question').addEventListener('click', (event) => {
